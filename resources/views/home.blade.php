@@ -26,7 +26,7 @@
                                 <div class="bottom-wrap">
                                     <a href="add-to-cart/{{$product->id}}" class="btn btn-sm btn-primary float-right">Add to Cart</a> 
                                     <div class="price-wrap h5">
-                                        <span class="price-new">&#8377; {{$product->price}}</span>
+                                        <span class="price-new">&#8377; {{$product->price}}/-</span>
                                     </div> <!-- price-wrap.// -->
                                 </div> <!-- bottom-wrap.// -->
                             </figure>

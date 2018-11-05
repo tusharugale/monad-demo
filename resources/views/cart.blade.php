@@ -38,22 +38,27 @@
                         <hr>
                         <br/>
                     @endforeach
+                    @if($total_price == 0)
+                        <h4>Empty Cart!!</h4>
+                    @endif
                     <hr/>
                     <div class="row">
                         <div class="col-md-9"></div>
                         <div class="col-md-1">Total : </div>
-                        <div class="col-md-2">&#8377; {{$total_price}}                            
+                        <div class="col-md-2">&#8377; {{$total_price}}/-                            
                         </div>
                     </div>
                     <br/>
+                    @if($total_price != 0)
                     <div class="row">
                         <div class="col-md-9"></div>
                         <div class="col-md-3">
-                            <form action="/process-payment">
+                            <form action="/payment">
                                 <button class="btn btn-success">Procceed to Payment</button>
                             </form>                      
                         </div>
                     </div>
+                    @endif
                 </div>
             </div>
         </div>

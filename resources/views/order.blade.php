@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-12">
             <div class="card">
-                <div class="card-header">Orders</div>
+                <div class="card-header">Order  # {{$order->id}}</div>
 
                 <div class="card-body">
                     @if (session('status'))
@@ -13,26 +13,34 @@
                             {{ session('status') }}
                         </div>
                     @endif
-                    @foreach($orders as $order)
+                    @foreach($order_products as $order_product)
                         
                         <div class="row">
                             <div class="col-md-2" style="float: left;">
-                                {{$order->id}}
+                                {{$order_product->id}}
                             </div>
                              <div class="col-md-4" style="float: left;">
-                                {{$order->created_at}}
+                                <img src="{{$order_product->image}}" style="width: 100px;height: 100px;">
                             </div>
                             <div class="col-md-4" style="float: left;">
-                                 &#8377; {{$order->total_price}}/-
+                                 {{$order_product->name}}
                             </div>
                             <div class="col-md-2" style="float: left;">
-                                <a href="/orders/{{$order->id}}" class="btn btn-success">View Order</a>
+                                 &#8377; {{$order_product->price}}
                             </div>
                         </div>
                         <br/>
                         <hr>
                         <br/>
                     @endforeach
+                    <hr/>
+                    <div class="row">
+                        <div class="col-md-9"></div>
+                        <div class="col-md-1">Total : </div>
+                        <div class="col-md-2">&#8377; {{$order->total_price}}/-                            
+                        </div>
+                    </div>
+                    <br/>
                 </div>
             </div>
         </div>
